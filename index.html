@@ -2,7 +2,7 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-adX0iWQUwXaLJZLioaG8OFg7VqQ+PmtYoUYV64vvbho=' 'sha256-ntaeEje1kY/7XwrUwqHWMLvO4SBpabGLi2GFvxoSd9s=' 'sha256-xL7rItzXkAZCPxFFDdItuQpDuSIDRjPoECv2Ph7Qf30=' 'sha256-hB+3H9PetUzdwJV649DYvTdJYENbye5HgvBACcGRkek=' 'sha256-CoYod508ZkSN3ClDjFB/ODABUbA5utHKrENIYyDiS2k=' 'sha256-wegQnfkDUuRwccvvis3+B7mkqnI8+NVTuCQCe3/bcqY=' 'sha256-bnzVsQR4dtlAsnCWxAGUTwgVVvgncNQ7Rwufz+n5j8U=' 'sha256-DTrLz6of1exyUF+4ScrmmCIeuq4CBRRkBqONT+y+Xas=' 'sha256-6LsmtanUno+5G35+qJXYtP3A3sUEpz+imxG4fHwWhx8='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' https://enscjrflhnldwuelgesd.supabase.co; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-adX0iWQUwXaLJZLioaG8OFg7VqQ+PmtYoUYV64vvbho=' 'sha256-ntaeEje1kY/7XwrUwqHWMLvO4SBpabGLi2GFvxoSd9s=' 'sha256-xL7rItzXkAZCPxFFDdItuQpDuSIDRjPoECv2Ph7Qf30=' 'sha256-hB+3H9PetUzdwJV649DYvTdJYENbye5HgvBACcGRkek=' 'sha256-CoYod508ZkSN3ClDjFB/ODABUbA5utHKrENIYyDiS2k=' 'sha256-wegQnfkDUuRwccvvis3+B7mkqnI8+NVTuCQCe3/bcqY=' 'sha256-bnzVsQR4dtlAsnCWxAGUTwgVVvgncNQ7Rwufz+n5j8U=' 'sha256-DTrLz6of1exyUF+4ScrmmCIeuq4CBRRkBqONT+y+Xas=' 'sha256-tyx0OvG9ZFV2w9brSGcpw2yYc0TSSyI/7yvsOH6qGtI='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' https://enscjrflhnldwuelgesd.supabase.co; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'">
 <meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#f4f6fa">
@@ -4637,7 +4637,7 @@ details.ux-set .settings-separator{display:none}
   .ux-fold[data-open="true"]>:last-child{margin-bottom:16px}
   /* دیالوگ‌ها به شکل شیت پایین */
   dialog.modal[open]{margin:auto 0 0!important;width:100%!important;max-width:none!important;max-height:94dvh!important;border-radius:24px 24px 0 0!important;animation:uxSheet .26s cubic-bezier(.2,.8,.2,1)}
-  dialog.modal[open] .modal-card{max-height:94dvh;overflow:auto;padding-bottom:calc(20px + env(safe-area-inset-bottom))!important;border-radius:24px 24px 0 0!important}
+  dialog.modal[open] .modal-card{max-height:94dvh;overflow:auto;border-radius:24px 24px 0 0!important}
   dialog.modal[open] .form-actions{position:sticky;bottom:0;background:var(--surface);padding-top:10px}
   @keyframes uxSheet{from{transform:translateY(40px);opacity:0}}
   input,select,textarea{font-size:16px!important}
@@ -4673,6 +4673,28 @@ select:not([multiple]){-webkit-appearance:none!important;appearance:none!importa
 .chart-slider.compact-mode .chart-slide{display:flex}
 .chart-slider.compact-mode .chart-slide>.chart-card{flex:1;min-width:0}
 .layout-choice .ti{font-size:16px;line-height:1}
+
+/* دیالوگ: سربرگ و دکمه‌ها ثابت، فقط میانه اسکرول می‌شود، بدون اسکرول‌بار زشت */
+body:has(dialog[open]){overflow:hidden}
+.modal-card{padding-top:0!important;padding-bottom:0!important;overscroll-behavior:contain;scrollbar-width:none!important;-ms-overflow-style:none}
+.modal-card::-webkit-scrollbar{display:none!important;width:0!important}
+.modal-card .modal-head{position:sticky;top:0;z-index:40;background:var(--surface);padding:20px 0 12px;margin:0 0 4px}
+.modal-card .form-actions{position:sticky;bottom:0;z-index:40;background:var(--surface);margin-top:10px;padding:12px 0 calc(16px + env(safe-area-inset-bottom));box-shadow:0 -12px 14px -12px rgba(0,0,0,.14)}
+/* لیست دسته‌بندی سفارشی */
+input[data-combo]{-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23788494' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:left 11px center;background-size:12px;padding-left:32px!important}
+.ux-combo-host{position:relative;z-index:20}
+.ux-combo{position:absolute;z-index:30;max-height:228px;overflow:auto;padding:6px;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:0 14px 34px rgba(20,30,50,.18);scrollbar-width:thin}
+.ux-combo[hidden]{display:none}
+.ux-combo{scroll-margin-bottom:96px}
+@media (max-width:899px){
+  .chart-heading{align-items:stretch!important;gap:10px}
+  .chart-heading .chart-tools{flex-direction:row!important;flex-wrap:wrap;align-items:stretch!important;justify-content:stretch;gap:8px;width:100%}
+  .chart-heading .chart-tools>*{flex:1 1 150px!important;height:auto!important;min-height:0!important;max-width:none!important}
+  .chart-heading .chart-tools .chart-month-nav{min-height:42px!important;justify-content:space-between}
+  .chart-heading .chart-tools .select{min-height:42px!important}
+}
+.ux-combo button{display:block;width:100%;text-align:start;border:0;background:transparent;color:var(--text);font:inherit;font-size:14px;padding:10px 12px;border-radius:9px;cursor:pointer}
+.ux-combo button:hover,.ux-combo button.on{background:var(--accent-soft);color:var(--accent)}
 </style>
 <script id="taraz-ux-v30-js">
 (()=>{
@@ -4758,6 +4780,33 @@ addEventListener('appinstalled',()=>{ban.classList.remove('show');inst.hidden=tr
 if(!standalone&&/iphone|ipad|ipod/i.test(navigator.userAgent)&&!dismissed()){
  ban.firstChild.textContent='برای نصب: دکمهٔ اشتراک‌گذاری را بزن و «افزودن به صفحهٔ اصلی» را انتخاب کن.';ban.querySelector('.ux-go').remove();setTimeout(()=>ban.classList.add('show'),3500)}
 
+/* لیست دسته‌بندی سفارشی به‌جای datalist مرورگر */
+const menu=document.createElement('div');menu.className='ux-combo';menu.hidden=true;menu.setAttribute('role','listbox');
+let cin=null,ai=-1;
+const strip=i=>{if(i.dataset.combo)return;i.dataset.combo='1';i.removeAttribute('list');i.autocomplete='off'};
+const chide=()=>{menu.hidden=true;ai=-1};
+function choose(v){cin.value=v;cin.dispatchEvent(new Event('input',{bubbles:true}));chide();cin.focus()}
+function cshow(){
+ if(!cin)return;const q=cin.value.trim();
+ const names=[...new Set($$('#categorySuggestions option').map(o=>o.value).filter(Boolean))].filter(v=>!q||v.includes(q)).slice(0,40);
+ if(!names.length){chide();return}
+ const host=cin.parentElement;host.classList.add('ux-combo-host');host.append(menu);
+ menu.innerHTML='';ai=-1;
+ names.forEach(v=>{const b=document.createElement('button');b.type='button';b.setAttribute('role','option');b.textContent=v;b.onpointerdown=e=>e.preventDefault();b.onclick=()=>choose(v);menu.append(b)});
+ menu.style.left=cin.offsetLeft+'px';menu.style.width=cin.offsetWidth+'px';menu.style.top=(cin.offsetTop+cin.offsetHeight+6)+'px';
+ menu.hidden=false;menu.scrollTop=0;requestAnimationFrame(()=>menu.scrollIntoView({block:'nearest'}));
+}
+const scan=()=>$$('input[list="categorySuggestions"]').forEach(strip);
+scan();new MutationObserver(scan).observe(document.body,{childList:true,subtree:true});
+document.addEventListener('focusin',e=>{const t=e.target;if(t.matches&&t.matches('input[data-combo]')){cin=t;cshow()}});
+document.addEventListener('input',e=>{if(e.target===cin)cshow()});
+document.addEventListener('focusout',e=>{if(e.target===cin)setTimeout(()=>{if(document.activeElement!==cin)chide()},120)});
+document.addEventListener('keydown',e=>{
+ if(menu.hidden||e.target!==cin)return;const o=[...menu.children];
+ if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();ai=(ai+(e.key==='ArrowDown'?1:-1)+o.length)%o.length;o.forEach((b,i)=>b.classList.toggle('on',i===ai));o[ai].scrollIntoView({block:'nearest'})}
+ else if(e.key==='Enter'&&ai>=0){e.preventDefault();choose(o[ai].textContent)}
+ else if(e.key==='Escape'){e.stopPropagation();chide()}
+});
 /* رنگ نوار وضعیت با تم هماهنگ شود */
 const tc=$('meta[name="theme-color"]');const sync=()=>{if(tc)tc.content=getComputedStyle(document.body).backgroundColor};
 new MutationObserver(sync).observe(document.body,{attributes:true,attributeFilter:['data-theme']});sync();
