@@ -2,7 +2,7 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-WgivXh+deGe68GJKWQxAwkO8uA5dvDx1R9UqSvfZM6Y=' 'sha256-ntaeEje1kY/7XwrUwqHWMLvO4SBpabGLi2GFvxoSd9s=' 'sha256-xL7rItzXkAZCPxFFDdItuQpDuSIDRjPoECv2Ph7Qf30=' 'sha256-hB+3H9PetUzdwJV649DYvTdJYENbye5HgvBACcGRkek=' 'sha256-CoYod508ZkSN3ClDjFB/ODABUbA5utHKrENIYyDiS2k=' 'sha256-wegQnfkDUuRwccvvis3+B7mkqnI8+NVTuCQCe3/bcqY=' 'sha256-bnzVsQR4dtlAsnCWxAGUTwgVVvgncNQ7Rwufz+n5j8U=' 'sha256-CFuR8A8JhXs79lWo6mO9sTuxq0j8DpIL7SLafhwovN4=' 'sha256-InnvUSxXCSafz58zShyL21e0pP9CA7v9XyJ93m8xdWc='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' https://enscjrflhnldwuelgesd.supabase.co; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-adX0iWQUwXaLJZLioaG8OFg7VqQ+PmtYoUYV64vvbho=' 'sha256-ntaeEje1kY/7XwrUwqHWMLvO4SBpabGLi2GFvxoSd9s=' 'sha256-xL7rItzXkAZCPxFFDdItuQpDuSIDRjPoECv2Ph7Qf30=' 'sha256-hB+3H9PetUzdwJV649DYvTdJYENbye5HgvBACcGRkek=' 'sha256-CoYod508ZkSN3ClDjFB/ODABUbA5utHKrENIYyDiS2k=' 'sha256-wegQnfkDUuRwccvvis3+B7mkqnI8+NVTuCQCe3/bcqY=' 'sha256-bnzVsQR4dtlAsnCWxAGUTwgVVvgncNQ7Rwufz+n5j8U=' 'sha256-DTrLz6of1exyUF+4ScrmmCIeuq4CBRRkBqONT+y+Xas=' 'sha256-6LsmtanUno+5G35+qJXYtP3A3sUEpz+imxG4fHwWhx8='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' https://enscjrflhnldwuelgesd.supabase.co; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'">
 <meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#f4f6fa">
@@ -1161,7 +1161,7 @@ let toastTimer = null;
 
 
 const TABLER_ICON_NAMES={
-  "chart-no-axes-combined":"chart-line","plus":"plus","download":"download","help-circle":"help-circle",
+  "chart-no-axes-combined":"chart-line","grid-3x3":"layout-columns","maximize-2":"arrows-maximize","plus":"plus","download":"download","help-circle":"help-circle",
   "settings":"settings","wallet":"wallet","calendar-days":"calendar","arrow-down-left":"arrow-down-left",
   "arrow-up-right":"arrow-up-right","arrow-left-right":"arrows-left-right","scale":"scale",
   "chevron-left":"chevron-left","chevron-right":"chevron-right","pencil":"pencil","trash-2":"trash",
@@ -4533,6 +4533,8 @@ const fa=e=>{const m=String(e?.message||e);
  if(/already registered|already been registered/i.test(m))return'با این ایمیل قبلاً حساب ساخته شده؛ وارد شو.';
  if(/not confirmed/i.test(m))return'ایمیل هنوز تأیید نشده؛ لینک ارسال‌شده به ایمیلت را بزن.';
  if(/at least 6|weak/i.test(m))return'گذرواژه باید دست‌کم ۶ نویسه باشد.';
+ const w=m.match(/after\s+(\d+)\s+seconds?/i);if(w)return'برای امنیت، تا '+faYear(w[1])+' ثانیهٔ دیگر نمی‌شود دوباره درخواست داد؛ کمی صبر کن و دوباره بزن.';
+ if(/email rate limit/i.test(m))return'تعداد ایمیل‌های ارسالی از حد مجاز گذشته؛ چند دقیقه بعد دوباره تلاش کن.';
  if(/rate limit|too many/i.test(m))return'تلاش‌ها زیاد بود؛ چند دقیقه بعد دوباره امتحان کن.';
  if(/signups? not allowed|disabled/i.test(m))return'ساخت حساب جدید فعلاً بسته است.';
  if(/fetch|network/i.test(m))return'اتصال اینترنت برقرار نیست.';
@@ -4661,11 +4663,16 @@ select:not([multiple]){-webkit-appearance:none!important;appearance:none!importa
   .ux-install{display:none!important}
 }
 @media (min-width:1100px){
-  [data-ux-grid]{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:8px;column-gap:18px;row-gap:0;align-items:start;grid-auto-flow:dense}
-  [data-ux-grid]>*{grid-column:1/-1;margin:0!important;align-self:start!important;height:auto!important;min-height:0!important}
+  [data-ux-grid]{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:stretch}
+  [data-ux-grid]>*{grid-column:1/-1;margin:0!important}
   [data-ux-grid]>.ux-half{grid-column:auto}
+  [data-ux-grid]>.ux-half.ux-full{grid-column:1/-1}
 }
 @media (prefers-reduced-motion:reduce){dialog.modal[open]{animation:none!important}}
+.chart-slider.compact-mode .chart-track{align-items:stretch}
+.chart-slider.compact-mode .chart-slide{display:flex}
+.chart-slider.compact-mode .chart-slide>.chart-card{flex:1;min-width:0}
+.layout-choice .ti{font-size:16px;line-height:1}
 </style>
 <script id="taraz-ux-v30-js">
 (()=>{
@@ -4692,7 +4699,7 @@ const inst=document.createElement('button');inst.type='button';inst.className='b
 /* پنل‌ها: جمع‌شونده در موبایل، دو‌ستونه در دسکتاپ */
 const KEEP=['charts-panel','section-panel','liability-panel','year-stats'],HALF=['goal-panel','compare-panel','budget-panel','calendar-panel','finance-forecast-panel','finance-month-review','finance-analytics-panel'];
 const mem=new Map(),wide=matchMedia('(min-width:1100px)');
-const fit=c=>{const g=c.parentElement;c.style.gridRowEnd=(g&&g.dataset.uxGrid&&wide.matches)?'span '+Math.ceil((c.getBoundingClientRect().height+18)/8):''};
+const fit=c=>{c.style.gridRowEnd=''};
 const ro='ResizeObserver' in window?new ResizeObserver(es=>es.forEach(e=>fit(e.target))):null;
 const track=par=>[...par.children].forEach(c=>{if(!c.dataset.uxRo){c.dataset.uxRo='1';ro&&ro.observe(c);fit(c)}});
 addEventListener('resize',()=>$$('[data-ux-grid]>*').forEach(fit));
@@ -4712,7 +4719,10 @@ function enhance(){
   head.addEventListener('click',tog);head.addEventListener('keydown',tog);
  });
 }
-new MutationObserver(enhance).observe(ws,{childList:true,subtree:true});enhance();
+function pair(g){let run=[];const end=()=>{if(run.length%2)run[run.length-1].classList.add('ux-full');run=[]};
+ [...g.children].forEach(c=>{c.classList.remove('ux-full');if(c.classList.contains('ux-half'))run.push(c);else end()});end()}
+const runAll=()=>{enhance();$$('[data-ux-grid]',ws).forEach(pair)};
+new MutationObserver(runAll).observe(ws,{childList:true,subtree:true});runAll();
 
 /* تنظیمات: گروه‌بندی به بخش‌های بازشونده */
 function groupSettings(){
