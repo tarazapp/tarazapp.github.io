@@ -2,7 +2,7 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-adX0iWQUwXaLJZLioaG8OFg7VqQ+PmtYoUYV64vvbho=' 'sha256-ntaeEje1kY/7XwrUwqHWMLvO4SBpabGLi2GFvxoSd9s=' 'sha256-CyX7rt4CuWjrCDbqeXfVOLuvR9F3zOXmD+f9b1yninY=' 'sha256-hB+3H9PetUzdwJV649DYvTdJYENbye5HgvBACcGRkek=' 'sha256-CoYod508ZkSN3ClDjFB/ODABUbA5utHKrENIYyDiS2k=' 'sha256-wegQnfkDUuRwccvvis3+B7mkqnI8+NVTuCQCe3/bcqY=' 'sha256-bnzVsQR4dtlAsnCWxAGUTwgVVvgncNQ7Rwufz+n5j8U=' 'sha256-DTrLz6of1exyUF+4ScrmmCIeuq4CBRRkBqONT+y+Xas=' 'sha256-3QuKx50yHkTSxBach6IOL4BiB62r2nHNUmoxWsD8TdU='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' https://enscjrflhnldwuelgesd.supabase.co; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-h3y3FrKQhfy84uYU0FPAimKZj0dxYw6wAQXjXMJNuS8=' 'sha256-ntaeEje1kY/7XwrUwqHWMLvO4SBpabGLi2GFvxoSd9s=' 'sha256-CyX7rt4CuWjrCDbqeXfVOLuvR9F3zOXmD+f9b1yninY=' 'sha256-hB+3H9PetUzdwJV649DYvTdJYENbye5HgvBACcGRkek=' 'sha256-CoYod508ZkSN3ClDjFB/ODABUbA5utHKrENIYyDiS2k=' 'sha256-wegQnfkDUuRwccvvis3+B7mkqnI8+NVTuCQCe3/bcqY=' 'sha256-bnzVsQR4dtlAsnCWxAGUTwgVVvgncNQ7Rwufz+n5j8U=' 'sha256-/BQixaHoP1PlVaMLoU9vL55FYLje9eV7c3XGxXSDTa8=' 'sha256-tOEqKMSCR0PEDvyIINMrfzZ0DrNM57Xw+IRUlF/6Tfc='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' https://enscjrflhnldwuelgesd.supabase.co; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'">
 <meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#f4f6fa">
@@ -35,6 +35,18 @@ body[data-accent="orange"]{--accent:#d98a3b;--accent-2:#efad68;--accent-soft:#ff
 body[data-theme="dark"][data-accent="blue"]{--accent-soft:#253452}
 body[data-theme="dark"][data-accent="purple"]{--accent-soft:#332b49}
 body[data-theme="dark"][data-accent="orange"]{--accent-soft:#423326}
+body[data-accent="green"]{--accent:#2f9e5b;--accent-2:#5cc287;--accent-soft:#e6f6ec}
+body[data-theme="dark"][data-accent="green"]{--accent-soft:#1f3a2b}
+body[data-accent="rose"]{--accent:#d6455d;--accent-2:#ea7387;--accent-soft:#fdebee}
+body[data-theme="dark"][data-accent="rose"]{--accent-soft:#44262d}
+body[data-accent="pink"]{--accent:#d4509a;--accent-2:#e87fba;--accent-soft:#fdebf5}
+body[data-theme="dark"][data-accent="pink"]{--accent-soft:#44273a}
+body[data-accent="indigo"]{--accent:#4a55c9;--accent-2:#7782e6;--accent-soft:#ebedfd}
+body[data-theme="dark"][data-accent="indigo"]{--accent-soft:#272b4d}
+body[data-accent="cyan"]{--accent:#1a9bb5;--accent-2:#4cc0d6;--accent-soft:#e3f6fa}
+body[data-theme="dark"][data-accent="cyan"]{--accent-soft:#1f3a41}
+body[data-accent="slate"]{--accent:#55657a;--accent-2:#8393a8;--accent-soft:#edf0f4}
+body[data-theme="dark"][data-accent="slate"]{--accent-soft:#2c3440}
 button,input,select,textarea{font:inherit}
 button{cursor:pointer}
 button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid color-mix(in srgb,var(--accent) 28%,transparent);outline-offset:2px}
@@ -649,11 +661,6 @@ button:active{transition-duration:.08s}
 .chart-track.chart-reflow-animate .chart-slide:nth-child(3){animation-delay:70ms;}
 @keyframes chartResponsiveReflow{from{opacity:.62;transform:translateY(11px)}to{opacity:1;transform:translateY(0)}}
 @media(prefers-reduced-motion:reduce){.chart-track.chart-reflow-animate .chart-slide{animation:none!important;}}
-
-
-
-/* Taraz v11 — RTL chart carousel, finance scrollbar, calendar clarity and guided help */
-.chart-slider .chart-track{direction:rtl!important;}
 .chart-slider .chart-slider-controls{direction:rtl;}
 .chart-slider .chart-slide{direction:rtl;}
 .chart-slider .chart-track{transform:translate3d(var(--chart-shift,0%),0,0);}
@@ -705,33 +712,10 @@ button:active{transition-duration:.08s}
 @media(min-width:701px){.page-slider:not([hidden]){display:flex;}}
 @media(max-width:700px){.page-slider{display:none!important;}}
 
-/* Contextual tutorial card: app controls remain clickable while the target is highlighted. */
-.help-guide{display:none;position:fixed;inset:0;z-index:9999;pointer-events:none;}
-.help-guide.is-open{display:block;}
-.help-guide-card{position:fixed;right:50%;bottom:max(16px,env(safe-area-inset-bottom));width:min(500px,calc(100vw - 24px));max-height:min(42vh,290px);overflow:auto;transform:translateX(50%);padding:17px 18px 15px;border:1px solid color-mix(in srgb,var(--accent) 22%,var(--line));border-radius:20px;background:var(--surface);color:var(--text);box-shadow:0 20px 60px rgba(5,20,35,.25);pointer-events:auto;animation:guideCardIn .38s cubic-bezier(.2,.8,.2,1) both;direction:rtl;}
-.guide-head{display:flex;align-items:center;justify-content:space-between;gap:12px;}
-.guide-step-label{font-size:10px;font-weight:900;color:var(--accent);background:var(--accent-soft);padding:4px 9px;border-radius:9px;}
-.guide-close{width:29px;height:29px;border:1px solid var(--line);border-radius:9px;background:var(--surface-2);color:var(--muted);font-size:21px;line-height:1;transition:background .2s,color .2s,transform .2s;}
-.guide-close:hover{background:var(--red-soft);color:var(--red);transform:rotate(90deg);}
-.guide-progress{height:4px;margin:11px 0 12px;background:var(--line);border-radius:9px;overflow:hidden;}
-.guide-progress span{display:block;width:12.5%;height:100%;border-radius:9px;background:linear-gradient(90deg,var(--accent),var(--accent-2));transition:width .35s cubic-bezier(.2,.8,.2,1);}
-.help-guide-card h2{font-size:15px;margin:0 0 5px;font-weight:900;}
-.help-guide-card p{font-size:11px;line-height:1.9;color:var(--muted);margin:0 0 13px;}
-.guide-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:11px;}
-.guide-countdown{font-size:9px;color:var(--muted);white-space:nowrap;}
-.guide-countdown b{display:inline-grid;place-items:center;min-width:19px;height:19px;margin-inline:2px;border-radius:6px;background:var(--accent-soft);color:var(--accent);font-size:10px;font-variant-numeric:tabular-nums;}
-.guide-actions{display:flex;gap:7px;}
-.guide-actions .btn{padding:6px 11px;font-size:10px;border-radius:10px;}
-.guide-actions .guide-arrow-btn{width:38px;height:34px;padding:0;font-size:20px;line-height:1;font-weight:900;}
-.guide-actions .btn:disabled{opacity:.4;cursor:not-allowed;transform:none;}
-.guide-highlight{outline:3px solid color-mix(in srgb,var(--accent) 86%,white)!important;outline-offset:4px!important;box-shadow:0 0 0 8px color-mix(in srgb,var(--accent) 18%,transparent),0 0 25px color-mix(in srgb,var(--accent) 30%,transparent)!important;animation:guideTargetPulse 1.8s ease-in-out infinite;}
-@keyframes guideCardIn{from{opacity:0;transform:translate(50%,18px) scale(.97)}to{opacity:1;transform:translate(50%,0) scale(1)}}
-@keyframes guideTargetPulse{0%,100%{outline-offset:4px}50%{outline-offset:7px}}
-@media(max-width:520px){.help-guide-card{bottom:max(9px,env(safe-area-inset-bottom));padding:14px 14px 12px;border-radius:17px;max-height:38vh}.help-guide-card h2{font-size:14px}.help-guide-card p{font-size:10px;margin-bottom:10px}.guide-foot{align-items:flex-end}.guide-countdown{font-size:8px}}
+
+@media(max-width:520px){}
 @media(prefers-reduced-motion:reduce){
  .chart-heading.chart-scope-transition,.chart-slider.chart-scope-transition .chart-slide,.chart-slider.chart-scope-transition .chart-card-title,.chart-slider.chart-scope-transition canvas,.chart-slider.chart-scope-transition .chart-legend,.chart-slider.chart-scope-transition .balance-chart-legend{animation:none!important}
- .page-slider,.page-slider *,.help-guide-card,.guide-progress span{transition:none!important;animation:none!important}
- .guide-highlight{animation:none!important}
 }
 
 
@@ -764,24 +748,8 @@ button:active{transition-duration:.08s}
 .calendar-cell .cal-net-compact{display:none;}
 @media(max-width:640px){.calendar-cell .cal-net{overflow:hidden;font-size:10px;letter-spacing:-.3px}.calendar-cell .cal-net-full{display:none}.calendar-cell .cal-net-compact{display:inline;white-space:nowrap}}
 
-/* v14: spotlight curtains frame the current tutorial target. */
-.help-guide{z-index:9999;pointer-events:none}.help-guide.is-open{display:block}
-.guide-shade{position:fixed;z-index:0;background:rgba(5,12,22,.76);backdrop-filter:blur(1.3px);-webkit-backdrop-filter:blur(1.3px);pointer-events:auto;transition:left .42s cubic-bezier(.2,.8,.2,1),top .42s cubic-bezier(.2,.8,.2,1),width .42s cubic-bezier(.2,.8,.2,1),height .42s cubic-bezier(.2,.8,.2,1),opacity .28s ease}
-.help-guide.is-open .guide-shade{opacity:1}.help-guide.is-closing .guide-shade{opacity:0}
-.guide-arrow-layer{position:fixed;inset:0;z-index:1;overflow:visible;pointer-events:none;color:var(--accent);transition:opacity .25s}
-.guide-arrow-layer path{fill:none;stroke:var(--accent);stroke-width:2.8;stroke-linecap:round;stroke-dasharray:9 7;filter:drop-shadow(0 2px 5px rgba(0,0,0,.38));animation:guideArrowFlow 1s linear infinite}
-.guide-arrow-layer.guide-arrow-hidden{opacity:0}
-.help-guide-card{z-index:2;right:50%;bottom:max(18px,env(safe-area-inset-bottom));width:min(560px,calc(100vw - 28px));max-height:min(38vh,300px);padding:17px 19px 14px;border:1px solid color-mix(in srgb,var(--accent) 42%,var(--line));border-radius:20px;background:var(--surface);box-shadow:0 18px 65px rgba(0,0,0,.34),0 0 0 1px rgba(255,255,255,.07);pointer-events:auto;direction:rtl}
-.guide-card-heading{display:flex;align-items:center;gap:9px;min-width:0;flex-wrap:wrap}.guide-kicker{font-size:9px;color:var(--muted);font-weight:800}.guide-step-label{font-size:10px}.guide-copy{min-width:0}
-.help-guide-card h2{font-size:16px;line-height:1.6;margin:0 0 4px;font-weight:950}.help-guide-card p{font-size:11.5px;line-height:1.95;margin:0 0 10px;color:var(--muted)}
-.guide-copy-in h2{animation:guideTitleIn .38s cubic-bezier(.2,.8,.2,1) both}.guide-copy-in p{animation:guideDescriptionIn .48s .06s cubic-bezier(.2,.8,.2,1) both}
-.guide-foot{border-top:1px solid var(--line);padding-top:10px;align-items:center}.guide-countdown{font-size:9px}.guide-actions{display:flex;gap:8px}
-.guide-actions .guide-arrow-btn{width:42px;height:36px;border-radius:11px;font-size:21px;transition:transform .2s,background .2s,opacity .2s}.guide-actions .guide-arrow-btn:not(:disabled):hover{transform:translateY(-2px) scale(1.05)}.guide-close{width:31px;height:31px;flex:none}
-.guide-highlight{position:relative;outline:3px solid var(--accent)!important;outline-offset:5px!important;border-radius:12px;box-shadow:0 0 0 8px color-mix(in srgb,var(--accent) 20%,transparent),0 0 28px color-mix(in srgb,var(--accent) 45%,transparent)!important;animation:guideTargetPulse 1.6s ease-in-out infinite}
-.help-guide.is-closing .help-guide-card{animation:guideCardOut .26s ease both}.help-guide.is-closing .guide-arrow-layer{opacity:0}
-@keyframes guideArrowFlow{to{stroke-dashoffset:-32}}@keyframes guideTitleIn{from{opacity:0;transform:translateY(9px) scale(.985);filter:blur(2px)}to{opacity:1;transform:none;filter:blur(0)}}@keyframes guideDescriptionIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}@keyframes guideCardOut{to{opacity:0;transform:translate(50%,18px) scale(.96)}}
-@media(max-width:600px){.help-guide-card{bottom:max(10px,env(safe-area-inset-bottom));width:calc(100vw - 20px);max-height:35vh;padding:13px 14px 11px;border-radius:17px}.help-guide-card h2{font-size:14px}.help-guide-card p{font-size:10px;line-height:1.85}.guide-foot{gap:8px}.guide-countdown{font-size:8px}.guide-actions .guide-arrow-btn{width:38px;height:33px}.guide-arrow-layer path{stroke-width:2.3}}
-@media(prefers-reduced-motion:reduce){.guide-shade,.guide-arrow-layer,.guide-actions .guide-arrow-btn{transition:none!important}.guide-arrow-layer path,.guide-highlight,.guide-copy-in h2,.guide-copy-in p,.help-guide.is-closing .help-guide-card{animation:none!important}}
+@media(max-width:600px){}
+@media(prefers-reduced-motion:reduce){}
 
 
 
@@ -832,10 +800,6 @@ button:active{transition-duration:.08s}
 .page-slider.page-slider-inactive{opacity:.2;pointer-events:none}
 @media(max-width:700px){.page-slider{display:none!important}}
 @media(prefers-reduced-motion:reduce){.page-slider,.page-slider *{transition:none!important}}
-
-/* The spotlight remains visible, but the app itself is inert during the tour. */
-body.guide-running .app-shell,body.guide-running .page-slider{user-select:none;-webkit-user-select:none}
-body.guide-running .app-shell{cursor:default}
 
 
 
@@ -958,8 +922,7 @@ body.guide-running .app-shell{cursor:default}
     </div>
     <div class="top-actions">
       <button class="btn btn-primary" id="addBtn"><span data-icon="plus"></span> افزودن</button>
-      <button class="btn btn-icon" id="helpBtn" title="راهنمای برنامه" aria-label="راهنمای استفاده از تراز"><span data-icon="help-circle"></span></button>
-      <button class="btn btn-icon" id="settingsBtn" title="تنظیمات" aria-label="تنظیمات"><span data-icon="settings"></span></button>
+            <button class="btn btn-icon" id="settingsBtn" title="تنظیمات" aria-label="تنظیمات"><span data-icon="settings"></span></button>
     </div>
   </header>
 
@@ -999,33 +962,6 @@ body.guide-running .app-shell{cursor:default}
   <span class="page-slider-caption">پیمایش</span>
   <button class="page-slider-btn" id="pageSliderDown" type="button" aria-label="رفتن به انتهای صفحه" title="انتهای صفحه"><span data-icon="chevron-down"></span></button>
 </aside>
-
-<!-- Interactive spotlight tutorial -->
-<div class="help-guide" id="helpGuide" aria-hidden="true">
-  <div class="guide-shade guide-shade-top" id="guideShadeTop"></div>
-  <div class="guide-shade guide-shade-left" id="guideShadeLeft"></div>
-  <div class="guide-shade guide-shade-right" id="guideShadeRight"></div>
-  <div class="guide-shade guide-shade-bottom" id="guideShadeBottom"></div>
-  <svg class="guide-arrow-layer" id="guideArrowLayer" aria-hidden="true">
-    <defs><marker id="guideArrowHead" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
-    <path id="guideArrowPath" d="" marker-end="url(#guideArrowHead)"/>
-  </svg>
-  <section class="help-guide-card" id="helpGuideCard" role="dialog" aria-modal="true" aria-labelledby="guideTitle" aria-describedby="guideDescription">
-    <div class="guide-head">
-      <div class="guide-card-heading"><span class="guide-kicker">راهنمای تعاملی تراز</span><div class="guide-step-label" id="guideStepLabel">آموزش ۱ از ۲۳</div></div>
-      <button class="guide-close" id="guideClose" type="button" aria-label="بستن راهنما" title="خروج از آموزش">×</button>
-    </div>
-    <div class="guide-progress"><span id="guideProgress"></span></div>
-    <div class="guide-copy" id="guideCopy"><h2 id="guideTitle">به تراز خوش اومدی</h2><p id="guideDescription">در چند مرحله کوتاه، بخش‌های اصلی برنامه رو می‌بینیم.</p></div>
-    <div class="guide-foot">
-      <span class="guide-countdown">مرحله بعدی در <b id="guideCountdown">۳۰</b> ثانیه</span>
-      <div class="guide-actions">
-        <button class="btn guide-arrow-btn" id="guidePrev" type="button" title="مرحله قبل" aria-label="مرحله قبل"><span data-icon="chevron-right"></span></button>
-        <button class="btn btn-primary guide-arrow-btn" id="guideNext" type="button" title="مرحله بعد" aria-label="مرحله بعد"><span data-icon="chevron-left"></span></button>
-      </div>
-    </div>
-  </section>
-</div>
 
 <dialog class="modal" id="addDialog">
   <div class="modal-card">
@@ -1076,6 +1012,12 @@ body.guide-running .app-shell{cursor:default}
       <button class="accent-choice" data-accent-choice="blue" style="--swatch:#4f78d8" title="آبی"></button>
       <button class="accent-choice" data-accent-choice="purple" style="--swatch:#8063c8" title="بنفش"></button>
       <button class="accent-choice" data-accent-choice="orange" style="--swatch:#d98a3b" title="نارنجی"></button>
+      <button class="accent-choice" data-accent-choice="green" style="--swatch:#2f9e5b" title="سبز"></button>
+      <button class="accent-choice" data-accent-choice="rose" style="--swatch:#d6455d" title="قرمز"></button>
+      <button class="accent-choice" data-accent-choice="pink" style="--swatch:#d4509a" title="صورتی"></button>
+      <button class="accent-choice" data-accent-choice="indigo" style="--swatch:#4a55c9" title="نیلی"></button>
+      <button class="accent-choice" data-accent-choice="cyan" style="--swatch:#1a9bb5" title="فیروزه‌ای"></button>
+      <button class="accent-choice" data-accent-choice="slate" style="--swatch:#55657a" title="گرافیتی"></button>
     </div></div>
     <div class="settings-separator"></div>
     <div class="field"><label for="openingBalanceInput">موجودی اولیه</label><input id="openingBalanceInput" type="number" inputmode="numeric" min="0" step="1" placeholder="مثلاً ۵۰۰۰۰۰۰"><div class="field-hint">پولی که قبل از اولین تراکنش در حسابت داشتی؛ در محاسبه‌ی موجودی و نمودارها لحاظ می‌شه.</div></div>
@@ -2138,173 +2080,8 @@ function setupPageSlider(){
   sync();
 }
 
-// Guided tour: spotlight target + bottom card; each step can be navigated or auto-advanced.
-let guideIndex=0,guideTimeout=null,guideInterval=null,guideDeadline=0,guideActive=false,guideClosing=false,guideTarget=null,guideSpotlightRaf=0;
-const guideSteps=[
-  {target:"#balanceCard",section:"overview",view:"months",title:"موجودی فعلی",description:"موجودی تقریبی همه حساب‌ها تا امروز را اینجا می‌بینی. این عدد از موجودی اولیه و تراکنش‌های ثبت‌شده محاسبه می‌شود؛ برای دیدن موجودی هر حساب، کمی پایین‌تر بخش حساب‌ها را ببین."},
-  {target:"#addBtn",section:"overview",title:"ثبت تراکنش جدید",description:"با افزودن، واریزی یا هزینه ثبت کن. تاریخ، مبلغ، دسته‌بندی، حساب و توضیحات را مشخص کن. برای هزینه‌های چندبخشی هم می‌توانی مبلغ را بین چند دسته تقسیم کنی و در صورت نیاز تکرار ماهانه بسازی."},
-  {target:".quick-stats",section:"overview",title:"خلاصه عملکرد سال",description:"سه عدد اصلی سال انتخاب‌شده را می‌بینی: مجموع واریزی‌ها، مجموع هزینه‌ها و خالص تفاوت آن‌ها. با تغییر سال، این آمار هم به‌روزرسانی می‌شود."},
-  {target:"#chartSlider",section:"overview",title:"سه نمودار مالی",description:"نمودار اول روند موجودی، نمودار دوم مقایسه واریزی و هزینه و نمودار سوم ترکیب هزینه‌ها بر اساس دسته‌بندی را نشان می‌دهد. در نمای بزرگ با فلش‌ها یا کشیدن اسلایدها جابه‌جا شو."},
-  {target:"#chartScope",section:"overview",title:"بازه نمودارها",description:"نمای سالانه روند ماه‌های سال را نمایش می‌دهد. با انتخاب نمای ماهانه، جزئیات روزهای یک ماه را می‌بینی و می‌توانی ماه موردنظر را از کنترل کنار آن عوض کنی."},
-  {target:"#chartLargeMode",section:"overview",title:"اندازه نمایش نمودار",description:"نمای کوچک سه نمودار را کنار هم نشان می‌دهد. نمای بزرگ هر نمودار را جداگانه و به شکل اسلایدی نمایش می‌دهد؛ فلش‌ها و نقطه‌های پایین نمودار برای جابه‌جایی هستند."},
-  {target:".year-stats",section:"overview",title:"جمع‌بندی سالانه",description:"در این قسمت آمار تکمیلی سال را می‌بینی؛ از بهترین ماه و بیشترین هزینه ماهانه تا میانگین‌ها و تعداد روزها و تراکنش‌های ثبت‌شده."},
-  {target:".finance-accounts-panel",section:"overview",title:"حساب‌ها و کیف پول‌ها",description:"حساب بانکی، پول نقد و پس‌انداز را جداگانه مدیریت کن. موجودی هر حساب مستقل است و می‌توانی حساب پیش‌فرض را انتخاب یا مشخصات حساب را ویرایش کنی."},
-  {target:".finance-account-actions",section:"overview",title:"مدیریت و انتقال بین حساب‌ها",description:"از روی کارت هر حساب می‌توانی آن را ویرایش یا وجهی به حساب دیگر منتقل کنی. انتقال داخلی درآمد یا هزینه محسوب نمی‌شود و فقط موجودی دو حساب را جابه‌جا می‌کند."},
-  {target:".finance-forecast-panel",section:"overview",title:"پیش‌بینی موجودی پایان ماه",description:"این بخش موجودی احتمالی پایان ماه را تخمین می‌زند. برآورد بر اساس میانگین هزینه و درآمد روزانه ماه‌های قبل یا در نبود سابقه، روند ماه فعلی و پرداخت‌های دوره‌ای است؛ عدد پیش‌بینی‌شده موجودی قطعی نیست."},
-  {target:".goal-panel",section:"overview",title:"هدف پس‌انداز",description:"مبلغی را به‌عنوان هدف پس‌انداز وارد کن. تراز میزان پیشرفت را بر اساس موجودی فعلی محاسبه می‌کند و با نوار پیشرفت نشان می‌دهد چقدر به هدفت نزدیک شده‌ای."},
-  {target:".finance-analytics-panel",section:"overview",title:"تحلیل رفتار مالی",description:"میانگین خرج روزهای فعال، میانگین خالص ماهانه، بهترین ماه و پرهزینه‌ترین ماه را بررسی کن. پایین همین کارت، دسته‌هایی که بیشترین سهم را از هزینه‌ها داشته‌اند نمایش داده می‌شوند."},
-  {target:".search-panel",section:"overview",title:"جست‌وجو و فیلتر تراکنش‌ها",description:"برای پیدا کردن سوابق قدیمی، بخشی از توضیحات را بنویس یا نوع، دسته‌بندی و بازه تاریخ را انتخاب کن. از نتیجه‌ها می‌توانی مستقیم جزئیات روز مربوط را باز کنی."},
-  {target:'[data-section="periods"]',section:"overview",view:"months",title:"رفتن به ماه‌ها و روزها",description:"این زبانه نمای تقویمی برنامه است. از اینجا می‌توانی ماه‌های سال را مرور کنی و وارد جزئیات هر ماه شوی."},
-  {target:".month-grid",section:"periods",view:"months",title:"انتخاب ماه",description:"هر کارت خلاصه واریزی، هزینه و خالص همان ماه را نشان می‌دهد. ماه جاری با رنگ و برچسب مشخص شده؛ روی کارت بزن تا وارد روزهای آن ماه شوی."},
-  {target:".month-summary",section:"periods",view:"month",currentMonth:true,title:"خلاصه مالی ماه",description:"پس از ورود به ماه، مجموع واریزی، هزینه و خالص ماه را در بالای فهرست روزها می‌بینی. این اعداد با تراکنش‌های همان ماه محاسبه می‌شوند."},
-  {target:".compare-panel",section:"periods",view:"month",currentMonth:true,title:"مقایسه با ماه قبل",description:"این کارت واریزی و هزینه ماه جاری را با ماه قبل مقایسه می‌کند و تغییر درصدی هرکدام را نشان می‌دهد؛ اگر ماه قبل داده‌ای نداشته باشد، همان‌جا مشخص می‌شود."},
-  {target:".calendar-panel",section:"periods",view:"month",currentMonth:true,title:"تقویم مالی",description:"هر خانه نماینده یک روز است. رنگ آن وضعیت خالص دخل‌وخرج را نشان می‌دهد و مبلغ زیر شماره روز قرار دارد. روی هر روز بزن تا تراکنش‌های همان روز را ببینی."},
-  {target:".budget-panel",section:"periods",view:"month",currentMonth:true,title:"بودجه‌بندی ماهانه",description:"برای هر دسته‌بندی سقف هزینه تعیین کن. نوار پیشرفت میزان مصرف را نشان می‌دهد و وقتی به سقف نزدیک شوی یا احتمال عبور از آن وجود داشته باشد، هشدار می‌گیری."},
-  {target:".day-list",section:"periods",view:"month",currentMonth:true,title:"فهرست روزهای ماه",description:"در این فهرست، واریزی، هزینه و خالص هر روز به همراه تعداد تراکنش‌ها دیده می‌شود. با انتخاب یک ردیف، پنجره جزئیات روز باز می‌شود و می‌توانی تراکنش‌ها را ویرایش یا حذف کنی."},
-  {target:".month-bottom-stats",section:"periods",view:"month",currentMonth:true,title:"آمار تکمیلی ماه",description:"تعداد روزهای دارای تراکنش، میانگین‌ها و روزهای دارای بیشترین واریزی یا هزینه را اینجا مرور کن."},
-  {target:".finance-month-review",section:"periods",view:"month",currentMonth:true,title:"مرور مالی ماه",description:"این جمع‌بندی، خالص ماه، میانگین خرج روز فعال، سهم هزینه از درآمد، تغییر هزینه نسبت به ماه قبل و دسته‌های اصلی هزینه را یکجا نمایش می‌دهد."},
-  {target:"#settingsBtn",section:"overview",view:"months",title:"تنظیمات و ابزارهای نگهداری",description:"از تنظیمات می‌توانی پوسته و رنگ برنامه، واحد پول، دسته‌بندی‌های شخصی، قوانین تراکنش تکرارشونده و سطل بازیافت را مدیریت کنی. دریافت و بازیابی فایل پشتیبان هم از همین بخش انجام می‌شود."}
-];
-let activeGuideSteps=guideSteps;
-function clearGuideTimers(){if(guideTimeout)clearTimeout(guideTimeout);if(guideInterval)clearInterval(guideInterval);guideTimeout=null;guideInterval=null;}
-function guideElement(id){return document.getElementById(id);}
-let guideInteractionState=null;
-function setGuideInteractionLock(locked){
-  const host=guideElement("helpGuide");
-  if(locked){
-    if(guideInteractionState)return;
-    // Lock every direct body layer (app, page slider and dialogs appended by extensions),
-    // leaving only the tutorial panel itself interactive.
-    guideInteractionState=Array.from(document.body.children)
-      .filter(el=>el!==host)
-      .map(element=>({element,wasInert:!!element.inert}));
-    guideInteractionState.forEach(item=>{item.element.inert=true;});
-    document.body.classList.add("guide-running");
-    guideElement("guideClose")?.focus({preventScroll:true});
-  }else{
-    guideInteractionState?.forEach(item=>{
-      if(item.element?.isConnected)item.element.inert=item.wasInert;
-    });
-    guideInteractionState=null;
-    document.body.classList.remove("guide-running");
-    guideElement("helpBtn")?.focus({preventScroll:true});
-  }
-}
-function setGuideShadeRects(rect){
-  const w=window.innerWidth,h=window.innerHeight,pad=9;
-  const left=Math.max(0,rect.left-pad),top=Math.max(0,rect.top-pad),right=Math.min(w,rect.right+pad),bottom=Math.min(h,rect.bottom+pad);
-  const set=(id,x,y,width,height)=>{const el=guideElement(id);if(!el)return;el.style.left=`${x}px`;el.style.top=`${y}px`;el.style.width=`${Math.max(0,width)}px`;el.style.height=`${Math.max(0,height)}px`;};
-  set("guideShadeTop",0,0,w,top);set("guideShadeBottom",0,bottom,w,h-bottom);set("guideShadeLeft",0,top,left,bottom-top);set("guideShadeRight",right,top,w-right,bottom-top);
-}
-function updateGuideSpotlight(){
-  if(!guideActive||guideClosing)return;
-  if(guideSpotlightRaf)cancelAnimationFrame(guideSpotlightRaf);
-  guideSpotlightRaf=requestAnimationFrame(()=>{
-    guideSpotlightRaf=0;if(!guideTarget||!guideTarget.isConnected)return;
-    const r=guideTarget.getBoundingClientRect();if(r.width<=0||r.height<=0)return;
-    setGuideShadeRects(r);
-    const svg=guideElement("guideArrowLayer"),path=guideElement("guideArrowPath"),card=guideElement("helpGuideCard");
-    if(svg&&path&&card){
-      const c=card.getBoundingClientRect(),targetBelow=r.top>=c.bottom;
-      const sx=c.left+c.width/2,sy=targetBelow?c.bottom+4:c.top-4,ex=r.left+r.width/2,ey=targetBelow?r.top-10:r.bottom+10;
-      const bend=Math.max(24,Math.abs(sy-ey)*.36);
-      path.setAttribute("d",targetBelow?`M ${sx} ${sy} C ${sx} ${sy+bend}, ${ex} ${ey-bend}, ${ex} ${ey}`:`M ${sx} ${sy} C ${sx} ${sy-bend}, ${ex} ${ey+bend}, ${ex} ${ey}`);
-      svg.setAttribute("viewBox",`0 0 ${window.innerWidth} ${window.innerHeight}`);svg.setAttribute("width",window.innerWidth);svg.setAttribute("height",window.innerHeight);
-      svg.classList.toggle("guide-arrow-hidden",Math.abs(sy-ey)<34);
-    }
-  });
-}
-function resetGuideTimer(){
-  if(!guideActive||guideClosing)return;clearGuideTimers();guideDeadline=Date.now()+30000;
-  const countdown=guideElement("guideCountdown");
-  const update=()=>{const left=Math.max(0,Math.ceil((guideDeadline-Date.now())/1000));if(countdown)countdown.textContent=faNum(left);};
-  update();guideInterval=setInterval(update,200);guideTimeout=setTimeout(()=>showGuideStep(guideIndex+1),30000);
-}
-function prepareGuideStep(step){
-  if(step.section)activeSection=step.section;if(step.view)activeView=step.view;
-  if(step.currentMonth){const now=currentJalali();selectedYear=now.year;selectedMonth=now.month;}else if(step.view==="months")selectedMonth=null;
-  render();
-}
-function showGuideStep(index){
-  if(!guideActive||guideClosing)return;if(index>=activeGuideSteps.length){closeHelpGuide();return;}
-  guideIndex=Math.max(0,index);const step=activeGuideSteps[guideIndex],host=guideElement("helpGuide"),copy=guideElement("guideCopy"),card=guideElement("helpGuideCard");
-  if(guideTarget)guideTarget.classList.remove("guide-highlight");guideTarget=null;prepareGuideStep(step);
-  const isPhone=window.matchMedia("(max-width:700px)").matches;
-  card?.classList.toggle("guide-card-above-mobile-dock",isPhone&&step.target==='[data-section="periods"]');
-  card?.classList.toggle("guide-card-above-mobile-fab",isPhone&&step.target==="#addBtn");
-  guideElement("guideStepLabel").textContent=`آموزش ${faNum(guideIndex+1)} از ${faNum(activeGuideSteps.length)}`;
-  guideElement("guideTitle").textContent=step.title;
-  const guideDescription=isPhone&&step.target==="#chartSlider"?"این قسمت سه نمودار اصلی برنامه را نشان می‌دهد: روند موجودی، مقایسه واریزی و هزینه و ترکیب هزینه‌ها. در گوشی هر سه نمودار به‌ترتیب زیر هم نمایش داده می‌شوند.":step.description;
-  guideElement("guideDescription").textContent=guideDescription;
-  guideElement("guideProgress").style.width=`${(guideIndex+1)/activeGuideSteps.length*100}%`;
-  guideElement("guidePrev").disabled=guideIndex===0;guideElement("guideNext").innerHTML=icon(guideIndex===activeGuideSteps.length-1?"check":"chevron-left");
-  guideElement("guideNext").setAttribute("aria-label",guideIndex===activeGuideSteps.length-1?"پایان آموزش":"مرحله بعد");
-  if(copy){copy.classList.remove("guide-copy-in");void copy.offsetWidth;copy.classList.add("guide-copy-in");}
-  host?.classList.remove("guide-target-missing");
-  requestAnimationFrame(()=>{
-    const isPhone=window.matchMedia("(max-width:700px)").matches;
-    const targetSelector=isPhone&&step.target==="#addBtn"?"#mobileAddBtn":step.target;
-    const target=document.querySelector(targetSelector);
-    if(!target){host?.classList.add("guide-target-missing");resetGuideTimer();return;}
-    guideTarget=target;
-    const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const fixedTarget=getComputedStyle(target).position==="fixed"||!!target.closest(".section-switch")&&getComputedStyle(target.closest(".section-switch")).position==="fixed";
-    if(!fixedTarget)target.scrollIntoView({behavior:reduceMotion?"auto":"smooth",block:"center",inline:"nearest"});
-    window.setTimeout(()=>{
-      if(!guideActive||guideClosing||guideIndex!==index)return;
-      const cardRect=guideElement("helpGuideCard").getBoundingClientRect(),targetRect=target.getBoundingClientRect();
-      if(fixedTarget){guideTarget?.classList.add("guide-highlight");updateGuideSpotlight();return;}
-      const safeTop=16,safeBottom=Math.max(safeTop,cardRect.top-24);
-      let correction=targetRect.bottom>safeBottom?targetRect.bottom-safeBottom:0;
-      if(targetRect.top-correction<safeTop)correction=targetRect.top-safeTop;
-      if(Math.abs(correction)>2){
-        window.scrollBy({top:correction,behavior:reduceMotion?"auto":"smooth"});
-        window.setTimeout(()=>{if(!guideActive||guideClosing||guideIndex!==index)return;guideTarget?.classList.add("guide-highlight");updateGuideSpotlight();},reduceMotion?0:430);
-      }else{guideTarget?.classList.add("guide-highlight");updateGuideSpotlight();}
-    },reduceMotion?0:430);
-  });
-  resetGuideTimer();
-}
-function startHelpGuide(){
-  if(guideActive)return;
-  const isPhone=window.matchMedia("(max-width:700px)").matches;
-  activeGuideSteps=isPhone?guideSteps.filter(step=>step.target!=="#chartLargeMode"):guideSteps.slice();
-  guideActive=true;guideClosing=false;guideIndex=0;
-  const host=guideElement("helpGuide");host.classList.remove("is-closing");host.classList.add("is-open");host.setAttribute("aria-hidden","false");
-  setGuideInteractionLock(true);
-  showGuideStep(0);
-}
-function finishCloseHelpGuide(){
-  const host=guideElement("helpGuide");host.classList.remove("is-open","is-closing","guide-target-missing");host.setAttribute("aria-hidden","true");
-  activeSection="overview";activeView="months";selectedMonth=null;selectedYear=currentJalali().year;
-  render();window.scrollTo({top:0,behavior:"smooth"});guideClosing=false;setGuideInteractionLock(false);
-}
-function closeHelpGuide(){
-  if(!guideActive||guideClosing)return;guideActive=false;guideClosing=true;clearGuideTimers();
-  if(guideTarget)guideTarget.classList.remove("guide-highlight");guideTarget=null;
-  guideElement("guideArrowPath")?.setAttribute("d","");
-  guideElement("helpGuideCard")?.classList.remove("guide-card-above-mobile-dock","guide-card-above-mobile-fab");
-  const host=guideElement("helpGuide");host.classList.add("is-closing");host.setAttribute("aria-hidden","true");window.setTimeout(finishCloseHelpGuide,300);
-}
-function setupHelpGuide(){
-  guideElement("helpBtn")?.addEventListener("click",startHelpGuide);
-  guideElement("guideClose")?.addEventListener("click",closeHelpGuide);
-  guideElement("guidePrev")?.addEventListener("click",()=>{if(guideIndex>0)showGuideStep(guideIndex-1);});
-  guideElement("guideNext")?.addEventListener("click",()=>showGuideStep(guideIndex+1));
-  window.addEventListener("scroll",()=>{if(guideActive)updateGuideSpotlight();},{passive:true});
-  window.addEventListener("resize",()=>{if(guideActive)updateGuideSpotlight();});
-  document.addEventListener("click",e=>{if(guideActive&&!e.target.closest("#helpGuide")&&!e.target.closest("#helpBtn"))resetGuideTimer();},true);
-  document.addEventListener("input",e=>{if(guideActive&&!e.target.closest("#helpGuide"))resetGuideTimer();},true);
-  document.addEventListener("change",e=>{if(guideActive&&!e.target.closest("#helpGuide"))resetGuideTimer();},true);
-  document.addEventListener("keydown",e=>{
-    if(!guideActive)return;
-    if(e.key==="Escape"){e.preventDefault();e.stopImmediatePropagation();closeHelpGuide();return;}
-    if(e.target instanceof Element&&e.target.closest("#helpGuide"))return;
-    e.preventDefault();e.stopImmediatePropagation();
-  },true);
-}
 loadState();applyTheme();selectedYear=currentJalali().year;chartYear=selectedYear;chartMonth=currentJalali().month;activeSection="overview";
-renderStaticIcons();render();setupPageSlider();setupHelpGuide();
+renderStaticIcons();render();setupPageSlider();
 </script>
 <script>
 // ===== Taraz v5 extensions =====
@@ -3249,7 +3026,6 @@ render();
   }
   .section-tab .icon-svg { width: 17px; height: 17px; }
   .section-tab.active { background: var(--accent-soft); box-shadow: inset 0 0 0 1px color-mix(in srgb,var(--accent) 16%,transparent); }
-  body.guide-running .section-switch { opacity: 0; pointer-events: none; }
 
   #workspace { min-height: 0; width: 100%; overflow: visible; }
   .overview-view { gap: 13px; }
@@ -3488,7 +3264,6 @@ render();
   }
   .mobile-add-fab .icon-svg{width:27px;height:27px;stroke-width:2.5}
   .mobile-add-fab:active{transform:scale(.94);box-shadow:0 3px 12px color-mix(in srgb,var(--accent) 30%,transparent)}
-  body.guide-running .mobile-add-fab{pointer-events:none}
 
   /* Do not resize/reposition the original balance card during scroll. */
   #balanceCard{position:relative!important;top:auto!important;z-index:auto!important}
@@ -3525,10 +3300,6 @@ render();
   .mobile-balance-compact .today-chip-btn{
     padding:5px 9px;border-radius:9px;font-size:9px;white-space:nowrap
   }
-  body.guide-running .mobile-balance-compact{display:none!important}
-
-  .help-guide-card.guide-card-above-mobile-dock{bottom:calc(78px + env(safe-area-inset-bottom))!important}
-  .help-guide-card.guide-card-above-mobile-fab{bottom:calc(148px + env(safe-area-inset-bottom))!important}
 }
 @media(max-width:390px){
   .mobile-add-fab{right:14px;width:55px;height:55px}
@@ -3665,41 +3436,6 @@ render();
   .reveal {
     transition:opacity 380ms var(--mobile-motion-ease),transform 400ms var(--mobile-motion-ease);
     transition-delay:var(--reveal-delay,0ms);
-  }
-
-  /* Buttons, navigation and small controls */
-  .app-shell button,
-  .modal button,
-  .help-guide button,
-  .mobile-add-fab,
-  .today-chip-btn,
-  .chart-nav-arrow,
-  .chart-slide-arrow,
-  .chart-dots button,
-  .layout-choice,
-  .type-btn,
-  .theme-choice,
-  .accent-choice,
-  .close-btn,
-  .edit-tx,
-  .delete-tx,
-  .finance-text-btn,
-  .finance-split-row button {
-    transition:
-      transform var(--mobile-motion-fast) var(--mobile-motion-pop),
-      opacity var(--mobile-motion-fast) ease,
-      color var(--mobile-motion-fast) ease,
-      background-color var(--mobile-motion-base) ease,
-      border-color var(--mobile-motion-base) ease,
-      box-shadow var(--mobile-motion-base) ease,
-      filter var(--mobile-motion-fast) ease;
-    -webkit-tap-highlight-color:transparent;
-  }
-  .app-shell button:not(:disabled):active,
-  .modal button:not(:disabled):active,
-  .help-guide button:not(:disabled):active {
-    transform:scale(.975);
-    filter:brightness(.985);
   }
   .app-shell button:disabled,
   .modal button:disabled { cursor:default; }
@@ -3841,7 +3577,6 @@ render();
   }
   .mobile-balance-compact .today-chip-btn { transition:transform 180ms var(--mobile-motion-pop),background-color 220ms ease; }
   .toast { transition:opacity 220ms ease,transform 300ms var(--mobile-motion-ease); }
-  .help-guide-card { transition:opacity 240ms ease,transform 300ms var(--mobile-motion-ease); }
 
   /* Touch devices should respond on press, not retain hover styling. */
   @media (hover:none) {
@@ -3874,14 +3609,6 @@ render();
 }
 
 @media (max-width:700px) {
-  /* Progress indicators animate their fill instead of snapping to the new value. */
-  .goal-progress span,
-  .budget-progress span,
-  .finance-top-cat-bar span,
-  .chart-progress span,
-  .guide-progress span {
-    transition:width 620ms cubic-bezier(.2,.75,.25,1),background-color 240ms ease;
-  }
 
   /* Search, budget, comparison and recurring rows are inserted dynamically. */
   .search-result,
@@ -3906,16 +3633,6 @@ render();
 
 @media (prefers-reduced-motion:reduce) {
   html,body { scroll-behavior:auto!important; }
-  dialog.modal,dialog.modal .modal-card,.section-switch,.mobile-add-fab,.mobile-balance-compact,
-  .app-shell button,.modal button,.help-guide button,.panel,.stat-card,.chart-card,.month-card,
-  .day-row,.mini-stat,.calendar-cell,.tx-item,.finance-account-card,.finance-split-details,
-  .search-result,.budget-item,.compare-box,.recurring-rule-row,.finance-category-row,.finance-trash-row,
-  .goal-progress span,.budget-progress span,.finance-top-cat-bar span,.chart-progress span,.guide-progress span,
-  .field input,.field select,.field textarea,.select {
-    transition-duration:.01ms!important;
-    animation-duration:.01ms!important;
-    animation-iteration-count:1!important;
-  }
   .reveal { opacity:1!important; transform:none!important; }
 }
 </style>
@@ -4523,70 +4240,53 @@ async function load(silent){
  return true;
 }
 
-/* ---------- صفحهٔ ورود ---------- */
+/* ---------- صفحهٔ ورود (فقط نام کاربری و گذرواژه) ---------- */
+const DOM='@'+(CFG.AUTH_DOMAIN||'taraz.app');
+const toEmail=u=>{u=u.trim();return u.includes('@')?u:u.toLowerCase()+DOM};
+const shortName=e=>e&&e.endsWith(DOM)?e.slice(0,-DOM.length):e;
 const gate=document.createElement('div');gate.id='authGate';
 gate.innerHTML=`<div class="ag-card" role="dialog" aria-label="ورود به تراز"><div class="ag-brand"></div>
-<div class="ag-tabs"><button type="button" data-m="in" class="on">ورود</button><button type="button" data-m="up">ساخت حساب</button></div>
-<form id="agForm" novalidate><div class="field"><label for="agEmail">ایمیل</label><input id="agEmail" type="email" autocomplete="username" required></div>
-<div class="field" id="agPassF"><label for="agPass" id="agPassL">گذرواژه</label><input id="agPass" type="password" autocomplete="current-password" minlength="8"></div>
-<button class="btn btn-primary" id="agGo" type="submit">ورود</button></form>
-<button class="ag-link" id="agForgot" type="button">گذرواژه را فراموش کرده‌ای؟</button><p class="ag-msg" id="agMsg" role="alert"></p></div>`;
+<form id="agForm" novalidate><div class="field"><label for="agUser">نام کاربری</label><input id="agUser" type="text" autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false" required></div>
+<div class="field"><label for="agPass">گذرواژه</label><input id="agPass" type="password" autocomplete="current-password" required></div>
+<button class="btn btn-primary" id="agGo" type="submit">ورود</button></form><p class="ag-msg" id="agMsg" role="alert"></p></div>`;
 document.body.append(gate);
 const bm=$('.topbar .brand');if(bm)$('.ag-brand',gate).innerHTML=bm.innerHTML;
-let mode='in';const msg=(t,k='err')=>{const m=$('#agMsg');m.textContent=t||'';m.className='ag-msg '+k};
+const msg=(t,k='err')=>{const m=$('#agMsg');m.textContent=t||'';m.className='ag-msg '+k};
 const fa=e=>{const m=String(e?.message||e);
- if(/Invalid login/i.test(m))return'ایمیل یا گذرواژه درست نیست.';
- if(/already registered|already been registered/i.test(m))return'با این ایمیل قبلاً حساب ساخته شده؛ وارد شو.';
- if(/not confirmed/i.test(m))return'ایمیل هنوز تأیید نشده؛ لینک ارسال‌شده به ایمیلت را بزن.';
- if(/at least 6|weak/i.test(m))return'گذرواژه باید دست‌کم ۶ نویسه باشد.';
- const w=m.match(/after\s+(\d+)\s+seconds?/i);if(w)return'برای امنیت، تا '+faYear(w[1])+' ثانیهٔ دیگر نمی‌شود دوباره درخواست داد؛ کمی صبر کن و دوباره بزن.';
- if(/email rate limit/i.test(m))return'تعداد ایمیل‌های ارسالی از حد مجاز گذشته؛ چند دقیقه بعد دوباره تلاش کن.';
+ if(/Invalid login/i.test(m))return'نام کاربری یا گذرواژه درست نیست.';
+ if(/not confirmed/i.test(m))return'این حساب هنوز فعال نشده؛ با مدیر برنامه تماس بگیر.';
+ const w=m.match(/after\s+(\d+)\s+seconds?/i);if(w)return'چند ثانیهٔ دیگر دوباره امتحان کن.';
  if(/rate limit|too many/i.test(m))return'تلاش‌ها زیاد بود؛ چند دقیقه بعد دوباره امتحان کن.';
- if(/signups? not allowed|disabled/i.test(m))return'ساخت حساب جدید فعلاً بسته است.';
  if(/fetch|network/i.test(m))return'اتصال اینترنت برقرار نیست.';
  return'خطایی رخ داد: '+m};
-function setMode(m){mode=m;gate.querySelectorAll('.ag-tabs button').forEach(b=>b.classList.toggle('on',b.dataset.m===m));
- $('#agGo').textContent={in:'ورود',up:'ساخت حساب',rec:'ذخیره گذرواژه جدید'}[m];
- $('#agPassF').style.display=m==='rec'&&0?'none':'';$('#agPassL').textContent=m==='rec'?'گذرواژه جدید':'گذرواژه';
- $('#agForgot').style.display=m==='in'?'':'none';$('#agPass').autocomplete=m==='in'?'current-password':'new-password';msg('')}
-gate.querySelectorAll('.ag-tabs button').forEach(b=>b.onclick=()=>setMode(b.dataset.m));
-$('#agForgot').onclick=async()=>{const e=$('#agEmail').value.trim();if(!e)return msg('اول ایمیلت را بنویس.');
- const {error}=await sb.auth.resetPasswordForEmail(e,{redirectTo:location.origin+location.pathname});
- error?msg(fa(error)):msg('لینک بازیابی به ایمیلت ارسال شد.','ok')};
 $('#agForm').onsubmit=async ev=>{ev.preventDefault();if(!sb)return;
- const email=$('#agEmail').value.trim(),pw=$('#agPass').value;
- if(mode!=='rec'&&!/^\S+@\S+\.\S+$/.test(email))return msg('ایمیل معتبر وارد کن.');
- if(pw.length<8)return msg('گذرواژه باید دست‌کم ۸ نویسه باشد.');
+ const u=$('#agUser').value,pw=$('#agPass').value;
+ if(!u.trim()||!pw)return msg('نام کاربری و گذرواژه را بنویس.');
  const go=$('#agGo');go.disabled=true;msg('');
- try{
-  if(mode==='in'){const {error}=await sb.auth.signInWithPassword({email,password:pw});if(error)throw error}
-  else if(mode==='up'){const {data,error}=await sb.auth.signUp({email,password:pw,options:{emailRedirectTo:location.origin+location.pathname}});if(error)throw error;
-   if(!data.session)msg('لینک تأیید به ایمیلت ارسال شد؛ بعد از تأیید وارد شو.','ok')}
-  else{const {error}=await sb.auth.updateUser({password:pw});if(error)throw error;msg('گذرواژه تغییر کرد.','ok')}
- }catch(e){msg(fa(e))}finally{go.disabled=false}};
+ try{const {error}=await sb.auth.signInWithPassword({email:toEmail(u),password:pw});if(error)throw error}
+ catch(e){msg(fa(e))}finally{go.disabled=false}};
 
 /* ---------- حساب کاربری در تنظیمات ---------- */
 function accountUI(){
- const host=$('.supabase-settings');if(!host||$('.ux-account'))return;
- const s=document.createElement('section');s.className='field ux-account';
- s.innerHTML='<label>حساب کاربری</label><p id="uxEmail"></p><p class="field-hint" style="margin:0 0 10px">اطلاعاتت روی پایگاه‌داده ذخیره می‌شود و روی هیچ مرورگری نمی‌ماند.</p><button class="btn" id="uxLogout" type="button">خروج از حساب</button>';
- host.before(s);$('#uxLogout').onclick=logout;
-}
+ const card=$('#settingsDialog .modal-card');if(!card||!user)return;let a=$('.ux-acct',card);
+ if(!a){a=document.createElement('div');a.className='ux-acct';
+  a.innerHTML='<span class="ux-avatar"></span><div class="ux-acct-t"><b></b><small>اطلاعاتت روی پایگاه‌داده ذخیره می‌شود</small></div><button class="btn" id="uxLogout" type="button">خروج</button>';
+  $('.modal-head',card).after(a);$('#uxLogout').onclick=logout}
+ const n=shortName(user.email)||'';$('.ux-avatar',a).textContent=(n[0]||'?').toUpperCase();$('b',a).textContent=n}
 async function logout(){await flush();await sb.auth.signOut()}
-function enter(u){user=u;gate.classList.remove('show');document.body.classList.remove('ux-locked');accountUI();$('#uxEmail')&&($('#uxEmail').textContent=u.email);$('#settingsDialog')?.close?.();load()}
-function leave(){user=null;dirty=false;clearTimeout(timer);chip.hidden=true;document.body.classList.add('ux-locked');fresh();apply(null);$('#agPass').value='';setMode('in')}
+function enter(u){user=u;gate.classList.remove('show');document.body.classList.remove('ux-locked');accountUI();$('#settingsDialog')?.close?.();load()}
+function leave(){user=null;dirty=false;clearTimeout(timer);chip.hidden=true;document.body.classList.add('ux-locked');fresh();apply(null);$('#agPass').value=''}
 
 /* ---------- راه‌اندازی ---------- */
 function boot(){
  if(!CFG.SUPABASE_URL||!CFG.SUPABASE_ANON_KEY){msg('اتصال به پایگاه‌داده تنظیم نشده است. مقدارهای SUPABASE_URL و SUPABASE_ANON_KEY را در فایل config.js بنویس.');$('#agGo').disabled=true;return}
  const s=document.createElement('script');s.src=SDK;s.async=true;
  s.onerror=()=>msg('بارگذاری سرویس ورود ناموفق بود. اینترنت را بررسی کن و صفحه را دوباره باز کن.');
- s.onload=async()=>{
-  sb=window.supabase.createClient(CFG.SUPABASE_URL,CFG.SUPABASE_ANON_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
+ s.onload=()=>{
+  sb=window.supabase.createClient(CFG.SUPABASE_URL,CFG.SUPABASE_ANON_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}});
   sb.auth.onAuthStateChange((ev,sess)=>{
-   if(ev==='PASSWORD_RECOVERY'){document.body.classList.add('ux-locked');setMode('rec');msg('گذرواژه جدیدت را بنویس.','ok');return}
    if(ev==='SIGNED_OUT')return leave();
-   if((ev==='SIGNED_IN'||ev==='INITIAL_SESSION')&&sess?.user&&mode!=='rec'&&(!user||user.id!==sess.user.id))setTimeout(()=>enter(sess.user),0)});
+   if((ev==='SIGNED_IN'||ev==='INITIAL_SESSION')&&sess?.user&&(!user||user.id!==sess.user.id))setTimeout(()=>enter(sess.user),0)});
  };document.head.append(s);
 }
 boot();
@@ -4692,6 +4392,33 @@ input[data-combo]{-webkit-appearance:none;appearance:none;background-image:url("
 .ux-combo{position:absolute;z-index:30;max-height:228px;overflow:auto;padding:6px;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:0 14px 34px rgba(20,30,50,.18);scrollbar-width:thin}
 .ux-combo[hidden]{display:none}
 .ux-combo{scroll-margin-bottom:96px}
+/* حریم خصوصی */
+body.ux-hide .ux-m,body.ux-hide .counter-target,body.ux-hide .balance-value,body.ux-hide .stat-value,body.ux-hide .finance-account-balance,body.ux-hide .month-net,body.ux-hide .search-result-amount,body.ux-hide .ux-money input,body.ux-hide canvas{filter:blur(8px);-webkit-user-select:none;user-select:none}
+.ux-m,.counter-target,canvas{transition:filter .25s}
+.ux-eye{display:inline-grid;place-items:center}.ux-eye .ux-ico{width:20px;height:20px}
+.ux-eye[aria-pressed="true"]{color:var(--accent);border-color:var(--accent)}
+/* تنظیمات خلوت */
+.ux-acct{display:flex;align-items:center;gap:12px;padding:12px 14px;margin:4px 0 14px;background:var(--surface-2);border:1px solid var(--line);border-radius:16px}
+.ux-avatar{width:40px;height:40px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:800;flex:none}
+.ux-acct-t{flex:1;min-width:0}.ux-acct-t b{display:block;font-size:14px;overflow:hidden;text-overflow:ellipsis}.ux-acct-t small{color:var(--muted);font-size:11.5px}
+details.ux-set{margin:8px 0;background:var(--surface);border:1px solid var(--line)}
+details.ux-set>summary{justify-content:flex-start;gap:12px;padding:12px 14px}
+details.ux-set>summary::after{margin-inline-start:auto}
+.ux-set-ico{width:38px;height:38px;border-radius:12px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;flex:none;font-size:19px}
+.ux-set-t b{display:block;font-size:14px}.ux-set-t small{display:block;color:var(--muted);font-size:11.5px;font-weight:500;margin-top:2px}
+details.ux-set .data-reset-settings{margin-top:18px;padding-top:16px;border-top:1px dashed var(--line)}
+details.ux-set .ux-set-body>.field:first-child{margin-top:0}
+.theme-options{flex-wrap:wrap}
+
+.ux-money{position:relative;flex:1 1 auto;min-width:0}
+.ux-money input{width:100%;padding-left:112px!important}
+.ux-unit{position:absolute;left:8px;top:50%;transform:translateY(-50%);display:flex;gap:2px;padding:3px;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+.ux-unit button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:12px;font-weight:700;padding:5px 9px;border-radius:7px;cursor:pointer}
+.ux-unit button[aria-pressed="true"]{background:var(--accent);color:#fff}
+.ux-curr{display:flex;gap:8px;margin-top:8px}
+.ux-curr button{border:1px solid var(--line);background:var(--surface-2);color:var(--text);font:inherit;font-size:13px;padding:7px 14px;border-radius:10px;cursor:pointer}
+.ux-curr button:hover{border-color:var(--accent);color:var(--accent)}
+
 .account-icon-picker{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
 .account-icon-picker button{aspect-ratio:1;min-width:0;display:grid;place-items:center;border:1px solid var(--line);border-radius:12px;background:var(--surface-2);color:var(--muted);cursor:pointer;transition:transform .15s,background .15s,border-color .15s,color .15s}
 .account-icon-picker button:hover{color:var(--accent);border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
@@ -4775,22 +4502,27 @@ function pair(g){
 const runAll=()=>{enhance();$$('[data-ux-grid]',ws).forEach(pair)};
 new MutationObserver(runAll).observe(ws,{childList:true,subtree:true});runAll();
 
-/* تنظیمات: گروه‌بندی به بخش‌های بازشونده */
+/* تنظیمات: چند بخش ساده و بازشونده (هر بار فقط یکی باز است) */
+const SETG=[['appearance','palette','ظاهر','تم و رنگ برنامه'],['money','coin','پول و هدف‌ها','واحد پول، موجودی اولیه، هدف پس‌انداز'],['tx','list-details','تراکنش‌ها','دوره‌ای‌ها، دسته‌بندی‌ها، حذف‌شده‌ها'],['data','database','اطلاعات','پشتیبان‌گیری و حذف اطلاعات']];
+const classify=k=>{const t=(k.textContent||'').trim();
+ if(k.classList.contains('data-reset-settings')||/^پشتیبان/.test(t))return'data';
+ if(/^(تم صفحه|رنگ اصلی)/.test(t))return'appearance';
+ if(/^(موجودی اولیه|هدف پس‌انداز|واحد پول)/.test(t))return'money';
+ return'tx'};
 function groupSettings(){
  const card=$('#settingsDialog .modal-card');if(!card)return;
- const kids=[...card.children].filter(k=>!k.classList.contains('modal-head')&&!k.classList.contains('ux-set'));
- const last=kids[kids.length-1];const tail=last&&$('#saveSettings',last)?kids.pop():null;
- let g=[],groups=[g];kids.forEach(k=>{if(k.classList.contains('settings-separator')){if(g.length)groups.push(g=[])}else g.push(k)});
- groups=groups.filter(x=>x.length);if(!groups.length)return;
- groups.forEach((items,i)=>{
-  const d=document.createElement('details');d.className='ux-set';if(i===0||items.some(x=>x.classList&&x.classList.contains('ux-account')))d.open=true;
-  const lb=$('label,h3,h4',items[0]),t=(items[0].matches('label')?items[0]:lb);
-  const s=document.createElement('summary');s.textContent=(t&&t.textContent.trim().slice(0,32))||'بیشتر';
-  const b=document.createElement('div');b.className='ux-set-body';
-  items[0].before(d);items.forEach(x=>b.append(x));d.append(s,b);
- });
- kids.filter(k=>k.classList.contains('settings-separator')).forEach(k=>k.remove());
- if(tail)card.append(tail);
+ const actions=[...card.children].find(k=>k.id==='saveSettings'||(k.querySelector&&k.querySelector('#saveSettings')))||null;
+ const body=k=>{let d=$('details.ux-set[data-g="'+k+'"]',card);
+  if(!d){const g=SETG.find(x=>x[0]===k);d=document.createElement('details');d.className='ux-set';d.dataset.g=k;
+   d.innerHTML='<summary><span class="ux-set-ico"><i class="ti ti-'+g[1]+'"></i></span><span class="ux-set-t"><b>'+g[2]+'</b><small>'+g[3]+'</small></span></summary><div class="ux-set-body"></div>';
+   d.addEventListener('toggle',()=>{if(d.open)$$('details.ux-set',card).forEach(o=>{if(o!==d)o.open=false})});
+   const order=SETG.map(x=>x[0]),later=$$('details.ux-set',card).find(o=>order.indexOf(o.dataset.g)>order.indexOf(k));
+   later?later.before(d):(actions?actions.before(d):card.append(d))}
+  return $('.ux-set-body',d)};
+ [...card.children].filter(k=>k!==actions&&!k.matches('.modal-head,.ux-acct,.ux-set,.form-actions')).forEach(k=>{
+  if(k.classList.contains('settings-separator')||k.classList.contains('supabase-settings')){k.remove();return}
+  body(classify(k)).append(k)});
+ SETG.forEach(g=>{const d=$('details.ux-set[data-g="'+g[0]+'"]',card);if(d&&!$('.ux-set-body',d).children.length)d.remove()});
 }
 $('#settingsBtn')?.addEventListener('click',()=>setTimeout(groupSettings,80));
 
@@ -4836,6 +4568,61 @@ document.addEventListener('keydown',e=>{
  else if(e.key==='Enter'&&ai>=0){e.preventDefault();choose(o[ai].textContent)}
  else if(e.key==='Escape'){e.stopPropagation();chide()}
 });
+/* ورودی مبلغ: جداکنندهٔ هزارگان + انتخاب تومان/ریال */
+const MONEY=['openingBalanceInput','savingsGoalSettingInput','goalAmountInput','budgetAmountInput','newAccountBalance','transferAmountInput','editAccountBalance','loanPrincipal','checkAmount'];
+const CHIP=['openingBalanceInput','savingsGoalSettingInput','newAccountBalance','transferAmountInput','editAccountBalance','loanPrincipal','checkAmount'];
+const baseUnit=()=>/ریال/.test(String(state&&state.currency||''))?'rial':'toman';
+const digitsOf=t=>String(t).replace(/[۰-۹]/g,d=>'۰۱۲۳۴۵۶۷۸۹'.indexOf(d)).replace(/[٠-٩]/g,d=>'٠١٢٣٤٥٦٧٨٩'.indexOf(d)).replace(/\D/g,'');
+const fmt=d=>d===''?'':Number(d).toLocaleString('fa-IR');
+function money(inp){
+ if(inp.dataset.money)return;inp.dataset.money='1';
+ const proto=Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value');
+ const raw=proto.get.call(inp);let unit=null;
+ const cur=()=>unit||baseUnit(),f=()=>cur()===baseUnit()?1:(cur()==='rial'?10:0.1);
+ const show=base=>{const d=digitsOf(base);proto.set.call(inp,d===''?'':fmt(String(Math.round(Number(d)*f()))))};
+ Object.defineProperty(inp,'value',{configurable:true,get(){const d=digitsOf(proto.get.call(inp));return d===''?'':String(Math.round(Number(d)/f()))},set(v){show(v)}});
+ inp.type='text';inp.inputMode='numeric';inp.autocomplete='off';inp.removeAttribute('min');inp.removeAttribute('step');
+ inp.addEventListener('input',()=>{const v0=proto.get.call(inp),pos=inp.selectionStart||0,left=digitsOf(v0.slice(0,pos)).length;
+  proto.set.call(inp,fmt(digitsOf(v0)));const v=proto.get.call(inp);let c=0,n=0;while(n<left&&c<v.length){if(/[۰-۹]/.test(v[c]))n++;c++}try{inp.setSelectionRange(c,c)}catch(e){}});
+ inp.form&&inp.form.addEventListener('reset',()=>setTimeout(()=>proto.set.call(inp,fmt(digitsOf(proto.get.call(inp)))),0));
+ if(CHIP.includes(inp.id)){
+  const wrap=document.createElement('div');wrap.className='ux-money';inp.before(wrap);wrap.append(inp);
+  const chip=document.createElement('div');chip.className='ux-unit';chip.setAttribute('role','group');chip.setAttribute('aria-label','واحد مبلغ');
+  chip.innerHTML='<button type="button" data-u="toman">تومان</button><button type="button" data-u="rial">ریال</button>';wrap.append(chip);
+  const sync=()=>chip.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.u===cur())));
+  chip.onclick=e=>{const b=e.target.closest('button');if(!b||b.dataset.u===cur())return;const base=inp.value;unit=b.dataset.u===baseUnit()?null:b.dataset.u;show(base);sync()};
+  new MutationObserver(sync).observe(document.body,{attributes:true,attributeFilter:['data-theme']});sync();
+  const dlg=inp.closest('dialog');dlg&&new MutationObserver(()=>{if(dlg.open){unit=null;sync()}}).observe(dlg,{attributes:true,attributeFilter:['open']});
+ }
+ show(raw);
+}
+function currencyChips(){const c=$('#currencyInput');if(!c||c.dataset.chips)return;c.dataset.chips='1';
+ const d=document.createElement('div');d.className='ux-curr';d.innerHTML='<button type="button">تومان</button><button type="button">ریال</button>';
+ c.after(d);d.onclick=e=>{const b=e.target.closest('button');if(!b)return;c.value=b.textContent;c.dispatchEvent(new Event('input',{bubbles:true}))}}
+const scanMoney=()=>{MONEY.forEach(id=>{const e=document.getElementById(id);if(e&&e.type!=='text'||(e&&!e.dataset.money))money(e)});currencyChips()};
+scanMoney();new MutationObserver(scanMoney).observe(document.body,{childList:true,subtree:true});
+/* حالت حریم خصوصی: سانسور مبالغ */
+SVG.eye='<path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.8"/>';
+SVG.eyeoff='<path d="M3 3l18 18M10.5 5.7A9 9 0 0 1 12 5.5c6 0 9.5 6.5 9.5 6.5a15.5 15.5 0 0 1-3.2 3.9M6.5 7.2C4 8.9 2.5 12 2.5 12s3.5 6.5 9.5 6.5c1.4 0 2.7-.3 3.8-.8M9.9 9.9a2.8 2.8 0 0 0 4 4"/>';
+const HK='taraz-ui-hide';let hide=false;try{hide=localStorage.getItem(HK)==='1'}catch(e){}
+const HAS=/[\d۰-۹]{1,3}[٬,،][\d۰-۹]{3}|[\d۰-۹]+\s*(?:تومان|ریال)/,NUMG=/[\d۰-۹]{1,3}(?:[٬,،][\d۰-۹]{3})+|[\d۰-۹]+(?=\s*(?:تومان|ریال))/g;
+function wrapNums(){
+ const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode(n){const p=n.parentElement;
+  if(!p||p.closest('script,style,textarea,input,select,option,canvas,dialog:not([open]),.ux-m'))return NodeFilter.FILTER_REJECT;
+  return HAS.test(n.nodeValue)?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT}});
+ const list=[];while(w.nextNode())list.push(w.currentNode);
+ list.forEach(n=>{const t=n.nodeValue,f=document.createDocumentFragment();let last=0;
+  t.replace(NUMG,(m,off)=>{f.append(t.slice(last,off));const sp=document.createElement('span');sp.className='ux-m';sp.textContent=m;f.append(sp);last=off+m.length;return m});
+  f.append(t.slice(last));n.replaceWith(f)});
+}
+const unwrapNums=()=>$$('.ux-m').forEach(sp=>sp.replaceWith(document.createTextNode(sp.textContent)));
+let hraf=0;const hsched=()=>{if(!hide||hraf)return;hraf=requestAnimationFrame(()=>{hraf=0;wrapNums()})};
+new MutationObserver(hsched).observe(document.body,{childList:true,subtree:true,characterData:true});
+const eye=document.createElement('button');eye.type='button';eye.className='btn btn-icon ux-eye';
+function applyHide(){document.body.classList.toggle('ux-hide',hide);eye.innerHTML=ico(hide?'eyeoff':'eye');
+ eye.setAttribute('aria-pressed',String(hide));eye.title=eye.ariaLabel=hide?'نمایش مبالغ':'پنهان‌کردن مبالغ';hide?wrapNums():unwrapNums()}
+eye.onclick=()=>{hide=!hide;try{localStorage.setItem(HK,hide?'1':'0')}catch(e){}applyHide()};
+($('.top-actions')||document.body).prepend(eye);applyHide();
 /* رنگ نوار وضعیت با تم هماهنگ شود */
 const tc=$('meta[name="theme-color"]');const sync=()=>{if(tc)tc.content=getComputedStyle(document.body).backgroundColor};
 new MutationObserver(sync).observe(document.body,{attributes:true,attributeFilter:['data-theme']});sync();
