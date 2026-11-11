@@ -974,7 +974,7 @@ button:active{transition-duration:.08s}
       <div class="field amount-field">
         <label for="amountInput">مبلغ</label>
         <div class="amount-controls">
-          <div class="zero-picker"><label for="zeroCountSelect">تعداد صفر</label><select id="zeroCountSelect" aria-label="تعداد صفر"><option value="0">−</option><option value="1">۰</option><option value="2">۰۰</option><option value="3" selected>۰۰۰</option><option value="4">۰۰۰۰</option><option value="5">۰۰۰۰۰</option><option value="6">۰۰۰۰۰۰</option></select></div>
+          <div class="zero-picker"><label for="zeroCountSelect">تعداد صفر</label><select id="zeroCountSelect" aria-label="تعداد صفر"><option value="0">۰</option><option value="1">۰۱</option><option value="2">۰۰</option><option value="3" selected>۰۰۰</option><option value="4">۰۰۰۰</option><option value="5">۰۰۰۰۰</option><option value="6">۰۰۰۰۰۰</option></select></div>
           <div class="amount-entry"><input id="amountInput" type="text" inputmode="numeric" autocomplete="off" placeholder="مثلاً ۵۰" required><div class="amount-preview"><span>مبلغ نهایی</span><strong id="amountPreview">۰</strong></div></div>
         </div>
         <div class="field-hint">مثلاً ۵۰ با سه صفر می‌شه ۵۰٬۰۰۰.</div>
@@ -1828,20 +1828,15 @@ function prepareTransactionForm(date=todayKey(),editing=null){
   document.getElementById("addDialogSubtitle").textContent=editing?"مبلغ، توضیح یا دسته‌بندیش رو تغییر بده.":"یه واریزی یا خرج تازه به حسابت اضافه کن.";
   document.getElementById("submitTransactionBtn").textContent=editing?"ذخیره تغییرات":"ثبتش کن";
 }
-function focusAmountOnPhone(){
-  if(!window.matchMedia?.("(max-width: 700px)").matches)return;
-  const input=document.getElementById("amountInput");
-  requestAnimationFrame(()=>{if(document.getElementById("addDialog")?.open){input.focus({preventScroll:true});input.select();}});
-}
 function openAddDialog(date=todayKey()){
-  currentEditId=null;prepareTransactionForm(date,null);document.getElementById("addDialog").showModal();focusAmountOnPhone();
+  currentEditId=null;prepareTransactionForm(date,null);document.getElementById("addDialog").showModal();
 }
 function openEditDialog(id){
   const item=state.transactions.find(t=>t.id===id);if(!item)return;
   currentEditId=id;
   document.getElementById("dayDialog").close();
   prepareTransactionForm(item.date,item);
-  document.getElementById("addDialog").showModal();focusAmountOnPhone();
+  document.getElementById("addDialog").showModal();
 }
 function setAddType(type){
   addType=type;document.querySelectorAll(".type-btn").forEach(b=>b.classList.toggle("active",b.dataset.type===type));
@@ -1967,30 +1962,6 @@ document.getElementById("dayDown").addEventListener("click",()=>{const i=documen
 document.getElementById("amountInput").addEventListener("input",updateAmountPreview);
 document.getElementById("zeroCountSelect").addEventListener("change",updateAmountPreview);
 document.getElementById("addForm").addEventListener("submit",addTransaction);
-// Keyboard helpers for fast transaction entry.
-window.addEventListener("keydown",event=>{
-  const dialog=document.getElementById("addDialog");
-  const amount=document.getElementById("amountInput");
-  const zeros=document.getElementById("zeroCountSelect");
-  const isOpen=dialog?.open;
-  if(event.ctrlKey&&!event.altKey&&!event.metaKey&&event.code==="NumpadAdd"){
-    event.preventDefault();if(!isOpen)openAddDialog();return;
-  }
-  if(!isOpen)return;
-  const active=document.activeElement;
-  const typing=active&&(active.matches("input,textarea,select,[contenteditable='true']"));
-  if(active===amount){
-    if(event.code==="NumpadAdd"||event.key==="+"){
-      event.preventDefault();zeros.selectedIndex=Math.min(zeros.options.length-1,zeros.selectedIndex+1);updateAmountPreview();return;
-    }
-    if(event.code==="NumpadSubtract"||event.key==="-"){
-      event.preventDefault();zeros.selectedIndex=Math.max(0,zeros.selectedIndex-1);updateAmountPreview();return;
-    }
-  }
-  if(!typing&&/^[0-9۰-۹٠-٩]$/.test(event.key)&&!event.ctrlKey&&!event.altKey&&!event.metaKey){
-    event.preventDefault();amount.focus();const digit=fromDigits(event.key);amount.value+=digit;updateAmountPreview();
-  }
-});
 document.querySelectorAll(".type-btn").forEach(b=>b.addEventListener("click",()=>setAddType(b.dataset.type)));
 document.getElementById("settingsBtn").addEventListener("click",openSettings);
 document.getElementById("exportFromSettings").addEventListener("click",()=>downloadBackup());
@@ -3338,10 +3309,6 @@ render();
   .mobile-balance-compact .balance-value{font-size:15px}
 }
 @media(prefers-reduced-motion:reduce){.mobile-add-fab,.mobile-balance-compact{transition:none!important}}
-/* v43: stable first paint — avoid entrance/reveal motion replaying on refresh */
-.app-shell>.topbar,.balance-card,.section-switch,.footer-note{animation:none!important}
-.reveal,.reveal.is-visible{opacity:1!important;transform:none!important;transition:none!important}
-
 </style>
 
 <script id="mobile-interactions-v26">
